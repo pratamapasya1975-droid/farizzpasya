@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fariz Pasya Pratama</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+      image-rendering: pixelated;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: radial-gradient(ellipse at top, #0f0f1a, #050510);
+      color: #00f6ff;
+      text-shadow: 0 0 2px #00f6ff;
+      overflow-x: hidden;
+    }
+
+    /* === CRT EFFECT === */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        rgba(255,255,255,0.05) 0px,
+        rgba(0,0,0,0.05) 2px
+      );
+      mix-blend-mode: overlay;
+      z-index: 999;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 5%;
+      position: fixed; top: 0; width: 100%;
+      background: #050510cc;
+      border-bottom: 3px solid #00f6ff;
+      z-index: 10;
+      box-shadow: 0 0 15px #00f6ff44;
+    }
+
+    nav h1 {
+      color: #00f6ff;
+      font-size: 0.9rem;
+      text-shadow: 0 0 8px #00f6ff;
+    }
+
+    nav ul {
+      list-style: none; display: flex; gap: 20px; align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.6rem;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #00f6ff;
+      text-shadow: 0 0 10px #00f6ff;
+    }
+
+    .lang-btn {
+      font-size: 0.6rem;
+      background: transparent;
+      border: 2px solid #00f6ff;
+      color: #00f6ff;
+      padding: 5px 10px;
+      cursor: pointer;
+      box-shadow: 0 0 5px #00f6ff;
+    }
+    .lang-btn:hover {
+      background: #00f6ff;
+      color: #000;
+    }
+
+    /* === HERO === */
+    .hero {
+      height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; padding: 0 10%;
+      background: url('https://giffiles.alphacoders.com/220/220281.gif') center/cover no-repeat fixed;
+      position: relative;
+      border-bottom: 4px solid #00f6ff;
+    }
+
+    .hero::after {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; background: rgba(10,10,25,0.8);
+    }
+
+    .hero h2, .hero p, .hero button { position: relative; z-index: 1; }
+
+    .hero h2 {
+      font-size: 1rem;
+      color: #00f6ff;
+      text-shadow: 0 0 10px #00f6ff;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 0.6rem;
+      margin-bottom: 25px;
+    }
+
+    .hero button {
+      border: 3px solid #00f6ff;
+      background: #050510;
+      color: #00f6ff;
+      padding: 10px 20px;
+      font-size: 0.6rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 0 10px #00f6ff66;
+    }
+    .hero button:hover {
+      background: #00f6ff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* === SECTIONS === */
+    section {
+      padding: 80px 8%;
+      text-align: center;
+      border-bottom: 2px dashed #00f6ff44;
+    }
+
+    .about h3, .features h4 {
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .about p, .features p {
+      font-size: 0.6rem;
+      color: #ccc;
+      text-shadow: none;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.4);
+      border: 2px solid #00f6ff;
+      box-shadow: 0 0 10px #00f6ff33;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #00f6ff99;
+    }
+
+    /* === FOOTER === */
+    footer {
+      padding: 50px 10%;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      border-top: 3px solid #00f6ff;
+    }
+
+    .footer-box {
+      display: inline-block;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid #00f6ff;
+      padding: 20px 40px;
+    }
+
+    .social-links {
+      display: flex; justify-content: center; gap: 20px; margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #00f6ff; font-size: 1.2rem; transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #fff; transform: scale(1.2);
+      text-shadow: 0 0 10px #00f6ff;
+    }
+
+    #footer-text {
+      margin-top: 20px;
+      font-size: 0.5rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>FARIZ PASYA</h1>
+    <ul>
+      <li><a href="#home" id="nav-home">Beranda</a></li>
+      <li><a href="#about" id="nav-about">Tentang</a></li>
+      <li><a href="#features" id="nav-features">Fitur</a></li>
+      <li><a href="#contact" id="nav-contact">Kontak</a></li>
+      <li><button class="lang-btn" id="langToggle">EN</button></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2 id="hero-title">FARIZ PASYA PRATAMA</h2>
+    <p id="hero-sub">SIJA - SMKN 1 CIMAHI.</p>
+    <button id="hero-btn" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">Cari Tahu</button>
+  </section>
+
+  <section class="about" id="about">
+    <h3 id="about-title">TENTANG SAYA</h3>
+    <p id="about-text">
+      SAYA ADALAH SISWA SMKN 1 CIMAHI - SIJA (SISTEM INFORMASI JARINGAN APLIKASI). LAHIR 24 JUNI 2008
+    </p>
+  </section>
+
+  <section class="features" id="features">
+    <div class="card">
+      <h4 id="card1-title">PRESTASI E-SPORT </h4>
+      <p id="card1-text">RUNNER UP LIGA ESPORT PELAJAR PURWAKARTA 2025 - JUARA 2 INDONESIA MANDIRI ESPORT - JUARA 3 SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY</p>
+    </div>
+    <div class="card">
+      <h4 id="card2-title">PRODUK PKK</h4>
+      <p id="card2-text">ABRAR-QU ADALAH WEBSITE ABSENSI BERBASIS QR YANG MASIH DALAM TAHAP PENGEMBANGAN</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-box">
+      <h4 id="footer-follow">KONEKSI</h4>
+      <div class="social-links">
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://discord.com/users/" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://t.me/" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://open.spotify.com/user/" target="_blank"><i class="fab fa-spotify"></i></a>
+      </div>
+    </div>
+    <p id="footer-text">Fariz Pasya Pratama XI SIJA C</p>
+  </footer>
+
+  <script>
+    const langToggle = document.getElementById('langToggle');
+    let lang = 'id';
+
+    const text = {
+      id: {
+        nav: ["Beranda", "Tentang", "Fitur", "Kontak"],
+        hero: ["FARIZ PASYA PRATAMA"],
+        about: ["TENTANG SAYA", "SAYA ADALAH SISWA SMKN 1 CIMAHI - SIJA (SISTEM INFORMASI JARINGAN APLIKASI). LAHIR 24 JUNI 2008"],
+        features: [
+          ["PRESTASI E-SPORT", "RUNNER UP LIGA ESPORT PELAJAR PURWAKARTA 2025 - JUARA 2 INDONESIA MANDIRI ESPORT - JUARA 3 SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY."],
+          ["PPRODUK PKK", "ABRAR-QU ADALAH WEBSITE ABSENSI BERBASIS QR YANG MASIH DALAM TAHAP PENGEMBANGAN."],
+        ],
+        footer: ["KONEKSI"]
+      },
+      en: {
+        nav: ["Home", "About", "Features", "Contact"],
+        hero: ["FARIZ PASYA PRATAMA"],
+        about: ["ABOUT ME", "I AM A STUDENT OF SMKN 1 CIMAHI - SIJA (APPLICATION NETWORK INFORMATION SYSTEM). BORN ON JUNE 24, 2008"],
+        features: [
+        ["E-SPORTS ACHIEVEMENTS", "RUNNER-UP OF THE 2025 PURWAKARTA STUDENT ESPORTS LEAGUE - 2ND PLACE IN INDONESIA MANDIRI ESPORTS - 3RD PLACE IN SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY."],
+        ["PKK PRODUCTS", "ABRAR-QU IS A QR-BASED ATTENTION WEBSITE STILL UNDER DEVELOPMENT."],
+        ],
+        footer: ["CONNECTION"]
+      }
+    };
+
+    langToggle.addEventListener('click', () => {
+      lang = lang === 'id' ? 'en' : 'id';
+      langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
+
+      document.getElementById('nav-home').textContent = text[lang].nav[0];
+      document.getElementById('nav-about').textContent = text[lang].nav[1];
+      document.getElementById('nav-features').textContent = text[lang].nav[2];
+      document.getElementById('nav-contact').textContent = text[lang].nav[3];
+
+      document.getElementById('hero-title').textContent = text[lang].hero[0];
+      document.getElementById('hero-sub').textContent = text[lang].hero[1];
+      document.getElementById('hero-btn').textContent = text[lang].hero[2];
+
+      document.getElementById('about-title').textContent = text[lang].about[0];
+      document.getElementById('about-text').textContent = text[lang].about[1];
+
+      document.getElementById('card1-title').textContent = text[lang].features[0][0];
+      document.getElementById('card1-text').textContent = text[lang].features[0][1];
+      document.getElementById('card2-title').textContent = text[lang].features[1][0];
+      document.getElementById('card2-text').textContent = text[lang].features[1][1];
+      document.getElementById('card3-title').textContent = text[lang].features[2][0];
+      document.getElementById('card3-text').textContent = text[lang].features[2][1];
+
+      document.getElementById('footer-follow').textContent = text[lang].footer[0];
+    });
+  </script>
+</body>
+</html>
