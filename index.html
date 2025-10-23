@@ -22,7 +22,6 @@
       overflow-x: hidden;
     }
 
-    /* === CRT EFFECT === */
     body::after {
       content: "";
       position: fixed;
@@ -37,7 +36,6 @@
       z-index: 999;
     }
 
-    /* === NAVBAR === */
     nav {
       display: flex; justify-content: space-between; align-items: center;
       padding: 15px 5%;
@@ -84,7 +82,6 @@
       color: #000;
     }
 
-    /* === HERO === */
     .hero {
       height: 100vh; display: flex; flex-direction: column;
       justify-content: center; align-items: center;
@@ -128,7 +125,6 @@
       transform: scale(1.05);
     }
 
-    /* === SECTIONS === */
     section {
       padding: 80px 8%;
       text-align: center;
@@ -167,7 +163,6 @@
       box-shadow: 0 0 20px #00f6ff99;
     }
 
-    /* === FOOTER === */
     footer {
       padding: 50px 10%;
       text-align: center;
@@ -229,7 +224,7 @@
 
   <section class="features" id="features">
     <div class="card">
-      <h4 id="card1-title">PRESTASI E-SPORT </h4>
+      <h4 id="card1-title">PRESTASI E-SPORT</h4>
       <p id="card1-text">RUNNER UP LIGA ESPORT PELAJAR PURWAKARTA 2025 - JUARA 2 INDONESIA MANDIRI ESPORT - JUARA 3 SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY</p>
     </div>
     <div class="card">
@@ -244,7 +239,7 @@
       <div class="social-links">
         <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://discord.com/users/" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://t.me/" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://open.spotify.com/user/" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
     </div>
@@ -258,21 +253,21 @@
     const text = {
       id: {
         nav: ["Beranda", "Tentang", "Fitur", "Kontak"],
-        hero: ["FARIZ PASYA PRATAMA"],
+        hero: ["FARIZ PASYA PRATAMA", "SIJA - SMKN 1 CIMAHI.", "Cari Tahu"],
         about: ["TENTANG SAYA", "SAYA ADALAH SISWA SMKN 1 CIMAHI - SIJA (SISTEM INFORMASI JARINGAN APLIKASI). LAHIR 24 JUNI 2008"],
         features: [
           ["PRESTASI E-SPORT", "RUNNER UP LIGA ESPORT PELAJAR PURWAKARTA 2025 - JUARA 2 INDONESIA MANDIRI ESPORT - JUARA 3 SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY."],
-          ["PPRODUK PKK", "ABRAR-QU ADALAH WEBSITE ABSENSI BERBASIS QR YANG MASIH DALAM TAHAP PENGEMBANGAN."],
+          ["PRODUK PKK", "ABRAR-QU ADALAH WEBSITE ABSENSI BERBASIS QR YANG MASIH DALAM TAHAP PENGEMBANGAN."],
         ],
         footer: ["KONEKSI"]
       },
       en: {
         nav: ["Home", "About", "Features", "Contact"],
-        hero: ["FARIZ PASYA PRATAMA"],
+        hero: ["FARIZ PASYA PRATAMA", "SIJA - SMKN 1 CIMAHI.", "Learn More"],
         about: ["ABOUT ME", "I AM A STUDENT OF SMKN 1 CIMAHI - SIJA (APPLICATION NETWORK INFORMATION SYSTEM). BORN ON JUNE 24, 2008"],
         features: [
         ["E-SPORTS ACHIEVEMENTS", "RUNNER-UP OF THE 2025 PURWAKARTA STUDENT ESPORTS LEAGUE - 2ND PLACE IN INDONESIA MANDIRI ESPORTS - 3RD PLACE IN SAMARA BANDUNG - #1 WEEKLY TOURNAMENT MyBCA ACADEMY."],
-        ["PKK PRODUCTS", "ABRAR-QU IS A QR-BASED ATTENTION WEBSITE STILL UNDER DEVELOPMENT."],
+        ["PKK PRODUCTS", "ABRAR-QU IS A QR-BASED ATTENDANCE WEBSITE STILL UNDER DEVELOPMENT."],
         ],
         footer: ["CONNECTION"]
       }
@@ -298,8 +293,6 @@
       document.getElementById('card1-text').textContent = text[lang].features[0][1];
       document.getElementById('card2-title').textContent = text[lang].features[1][0];
       document.getElementById('card2-text').textContent = text[lang].features[1][1];
-      document.getElementById('card3-title').textContent = text[lang].features[2][0];
-      document.getElementById('card3-text').textContent = text[lang].features[2][1];
 
       document.getElementById('footer-follow').textContent = text[lang].footer[0];
     });
